@@ -1,0 +1,32 @@
+----> paso para sincronizar con Github
+
+echo "# RDSI" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/jGuellDev/RDSI.git
+git push -u origin main
+
+
+
+----> lo segundo no fue necesario
+
+git remote add origin https://github.com/jGuellDev/RDSI.git
+git branch -M main
+git push -u origin main
+
+
+
+----> Despues de Hacer un cambio
+
+git add .
+git commit ---> debe salir el vim
+Shift + A
+Poner Nombre de Vesion en parte superior
+Escape
+Shift + :
+wq
+git push -u origin main
+
+

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../static/css/estilos.css">
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+        <img src="#" width="65" alt="">
+        <div class="logo_name">Menu</div>
+        <i class='bx bx-menu' id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+      <li>
+          <i class='bx bx-search' ></i>
+         <input type="text" placeholder="Search...">
+         <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href=" {{ url_for('menu')}} ">
+          <i class='bx bx-home-alt'></i>
+          <span class="links_name">Inicio</span>
+        </a>
+         <span class="tooltip">Inicio</span>
+      </li>
+      <li>
+       <a href=" {{ url_for('usuario')}} ">
+         <i class='bx bx-user' ></i>
+         <span class="links_name">Gestion De Usuarios</span>
+       </a>
+       <span class="tooltip">User</span>
+     </li>
+     <li>
+       <a href="{{ url_for('msg')}} ">
+         <i class='bx bx-chat' ></i>
+         <span class="links_name">Envio de Correos</span>
+       </a>
+       <span class="tooltip">Envio de Correos</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-block' ></i>
+         <span class="links_name">Bloquear Usuario</span>
+       </a>
+       <span class="tooltip">Bloqueo Usuario</span>
+     </li>
+     <li>
+       <a href="#">
+         <i class='bx bx-cog' ></i>
+         <span class="links_name">Setting</span>
+       </a>
+       <span class="tooltip">Setting</span>
+     </li>
+     <li class="profile">
+         <div class="profile-details">
+           <!--<img src="profile.jpg" alt="profileImg">-->
+           
+         </div>
+         <a href="/logout"><i class='bx bx-log-out' id="log_out"></i></a>
+     </li>
+    </ul>
+  </div>
+  
+  <!-- SECCION 1 -->
+
+  <!-- NAV VAR-->
+<section class="home-section">
+  <div class="container-fluid container fixed-top">
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand ms-5" href="#">Correos Corporativos</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-6 mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Bandeja</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Borradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Herramientas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- NAV VAR-->
+  </div>
+
+  <!--  SLIDER -->
+  <div>
+    <div class="container-fluid fondo">
+    <div class="container d-flex flex-column justify-content-center h-100 text-white align-items-center">
+      <h1>Bienvenidos a nuestra plataforma de correos corporativos</h1>
+      <p class="pm">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Optio soluta a necessitatibus deleniti fugit commodi iusto in autem culpa porro!</p>
+        <div>
+          <a href="#" class="btn btn-danger">Leer Más</a>
+        </div>
+    </div>
+    </div>
+  </div>
+<!--  SLIDER -->
+
+<!-- SECCION2 -->
+<div class="container py-5">
+  <div class="row align-items-center text-right">
+    <div class="col-md-6">
+      <h2>Equipos de Trabajo.</h2>
+      <p><b>Desarrollo para las areás de la compañía.</b></p>
+      <p>Nuestra plataforma de correos, les permite a las empresas de los distintos ambitos laborales,
+        poder acceder a la informacion de una manera segura y óptima.</p>
+    </div>
+    <div class="col-md-6">
+      <img src="../static/Imagenes/equipo.png" class="img-fluid" alt="" width="500px">
+    </div>
+  </div>
+</div>
+<!-- SECCION2 -->
+</section>
+<!-- SECCION 1 -->
+
+
+  <!-- JAVA SCRIPT -->
+<script>
+let sidebar = document.querySelector(".sidebar");
+let closeBtn = document.querySelector("#btn");
+let searchBtn = document.querySelector(".bx-search");
+//let ussBtn = document.querySelector(".bx-user");
+
+closeBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("open");
+  menuBtnChange();//calling the function(optional)
+});
+
+searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+  sidebar.classList.toggle("open");
+  menuBtnChange(); //calling the function(optional)
+});
+
+// ussBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+//   sidebar.classList.toggle("open");
+//   menuBtnChange(); //calling the function(optional)
+// });
+
+// following are the code to change sidebar button(optional)
+function menuBtnChange() {
+ if(sidebar.classList.contains("open")){
+   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
+ }else {
+   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
+ }
+}
+</script>
+</body>
+</html>
