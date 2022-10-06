@@ -12,7 +12,7 @@ import os
 
 
 
-app = Flask(__name__) #---> Objeto que se crea con el poder de flash
+app = Flask(__name__) #---> Objeto que se crea con el poder de flasshh
 username = ""
 app.secret_key = os.urandom(24) # ---> al objeto app, agregale el key
 
