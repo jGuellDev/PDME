@@ -309,4 +309,4 @@ def logout():
 
 
 
-app.run(debug=True)#Ojo esto corre el entorno virtual
+#app.run(debug=True)#Ojo esto corre el entorno virtual
